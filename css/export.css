@@ -1,0 +1,66 @@
+.export-layout {
+  display: grid;
+  grid-template-columns: minmax(17rem, 23rem) minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.export-options {
+  position: sticky;
+  top: 1rem;
+}
+
+.export-preview-stack {
+  display: grid;
+  gap: 1rem;
+}
+
+.export-option-grid {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.export-toggle-card {
+  padding: 0.85rem;
+  border: 1px solid color-mix(in srgb, var(--muted), transparent 76%);
+  border-radius: calc(var(--radius) * 0.72);
+  background: var(--bg-soft);
+}
+
+.export-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.export-source-meta {
+  margin: 0.55rem 0 0;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.export-frame-wrap {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.export-code-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.export-code-grid .code-panel {
+  min-height: 22rem;
+}
+
+@media (max-width: 991.98px) {
+  .export-layout,
+  .export-code-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .export-options {
+    position: static;
+  }
+}

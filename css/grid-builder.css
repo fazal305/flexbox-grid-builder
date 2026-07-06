@@ -1,0 +1,105 @@
+.grid-preview-wrap {
+  display: grid;
+  gap: 1rem;
+}
+
+.grid-canvas {
+  display: grid;
+  max-width: 100%;
+  margin: 0 auto;
+  outline: 1px solid color-mix(in srgb, var(--secondary), transparent 54%);
+  outline-offset: 0.3rem;
+  background: color-mix(in srgb, var(--card), var(--bg-soft) 32%);
+}
+
+.grid-painter {
+  display: grid;
+  gap: 0.35rem;
+  padding: 0.75rem;
+  border: 1px solid color-mix(in srgb, var(--muted), transparent 74%);
+  border-radius: calc(var(--radius) * 0.72);
+  background: var(--bg-soft);
+}
+
+.grid-painter-board {
+  display: grid;
+  gap: 0.3rem;
+}
+
+.grid-painter-cell {
+  display: grid;
+  place-items: center;
+  min-height: 2.75rem;
+  border: 1px dashed color-mix(in srgb, var(--muted), transparent 58%);
+  border-radius: calc(var(--radius) * 0.42);
+  background: var(--card);
+  color: var(--muted);
+  cursor: pointer;
+  user-select: none;
+  transition:
+    border-color var(--transition-speed) ease,
+    background var(--transition-speed) ease,
+    color var(--transition-speed) ease;
+}
+
+.grid-painter-cell:hover,
+.grid-painter-cell.active {
+  border-color: var(--secondary);
+  background: color-mix(in srgb, var(--secondary), transparent 84%);
+  color: var(--text);
+}
+
+.track-list {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.track-editor {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.55rem;
+  align-items: end;
+}
+
+.grid-item-controls {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.grid-placement-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+
+.grid-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.grid-toolbar-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  align-items: center;
+}
+
+.area-name-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.55rem;
+}
+
+@media (max-width: 575.98px) {
+  .grid-placement-grid,
+  .track-editor {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-toolbar-group {
+    width: 100%;
+  }
+}

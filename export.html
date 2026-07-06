@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Flexbox/Grid Builder | Export Center</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="styles.css" rel="stylesheet" />
+    <link href="css/export.css" rel="stylesheet" />
+  </head>
+  <body data-page="export">
+    <div class="app-shell">
+      <main class="app-main">
+        <header class="page-header">
+          <div>
+            <p class="page-kicker">Production code export</p>
+            <h1 class="page-title">Export Center</h1>
+            <p class="page-description">
+              Preview the exact generated result in an iframe, customize class
+              names, copy code, or download files.
+            </p>
+          </div>
+        </header>
+
+        <section class="export-layout">
+          <aside class="card-panel export-options">
+            <div class="panel-inner">
+              <h2 class="panel-title">Export Options</h2>
+              <div id="exportOptions" class="export-option-grid"></div>
+            </div>
+          </aside>
+
+          <div class="export-preview-stack">
+            <div class="card-panel">
+              <div class="panel-inner">
+                <h2 class="panel-title">Live Export Preview</h2>
+                <p class="panel-subtitle">
+                  The iframe uses the same HTML and CSS that will be copied or
+                  downloaded.
+                </p>
+                <div class="export-frame-wrap">
+                  <iframe
+                    class="export-frame"
+                    id="exportPreviewFrame"
+                    title="Export preview"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-panel">
+              <div class="panel-inner">
+                <div
+                  class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3"
+                >
+                  <h2 class="panel-title mb-0">Generated Code</h2>
+                  <div class="export-actions">
+                    <button
+                      class="btn btn-outline-theme btn-sm"
+                      id="copyExportHtmlBtn"
+                      type="button"
+                    >
+                      Copy HTML
+                    </button>
+                    <button
+                      class="btn btn-outline-theme btn-sm"
+                      id="copyExportCssBtn"
+                      type="button"
+                    >
+                      Copy CSS
+                    </button>
+                    <button
+                      class="btn btn-outline-theme btn-sm"
+                      id="downloadHtmlBtn"
+                      type="button"
+                    >
+                      Download HTML
+                    </button>
+                    <button
+                      class="btn btn-outline-theme btn-sm"
+                      id="downloadCssBtn"
+                      type="button"
+                    >
+                      Download CSS
+                    </button>
+                  </div>
+                </div>
+                <div class="export-code-grid">
+                  <div>
+                    <p class="panel-subtitle">HTML</p>
+                    <pre class="code-panel" id="exportHtmlCode"></pre>
+                  </div>
+                  <div>
+                    <p class="panel-subtitle">CSS</p>
+                    <pre class="code-panel" id="exportCssCode"></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/shared.js"></script>
+    <script src="js/export.js"></script>
+  </body>
+</html>
