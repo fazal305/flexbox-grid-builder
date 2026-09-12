@@ -714,3 +714,14 @@ iframe.export-frame {
     font-size: 0.78rem;
   }
 }
+
+.is-invalid {
+  border-color: var(--danger) !important;
+}
+
+.invalid-feedback {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.78rem;
+  color: var(--danger);
+}
