@@ -443,6 +443,8 @@ function persistAndRenderGrid(renderControls) {
 
 function bindGridEvents() {
     document.addEventListener("input", function (event) {
+        if (event.target.type === "number") validateNumberInput(event.target);
+
         if (event.target.dataset.trackType) {
             updateTrackSize(event.target.dataset.trackType, Number(event.target.dataset.trackIndex), event.target.value);
         }

@@ -333,6 +333,8 @@ function bindFlexEvents() {
         const containerProp = event.target.dataset.containerProp;
         const itemProp = event.target.dataset.itemProp;
 
+        if (event.target.type === "number") validateNumberInput(event.target);
+
         if (containerProp) updateContainerProperty(containerProp, event.target.value);
         if (itemProp) updateItemProperty(event.target.dataset.id, itemProp, event.target.value);
     });

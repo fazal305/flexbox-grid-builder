@@ -110,6 +110,36 @@ function generateId(prefix) {
     return `${prefix}-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`;
 }
 
+function validateNumberInput(input) {
+    if (!input || input.type !== "number") return true;
+
+    const value = input.value;
+    const min = input.min !== "" ? Number(input.min) : null;
+    const max = input.max !== "" ? Number(input.max) : null;
+
+    let message = "";
+    if (value === "") {
+        message = "Value is required.";
+    } else if (min !== null && Number(value) < min) {
+        message = `Value must be at least ${min}.`;
+    } else if (max !== null && Number(value) > max) {
+        message = `Value must be at most ${max}.`;
+    }
+
+    let feedback = input.nextElementSibling;
+    if (!feedback || !feedback.classList.contains("invalid-feedback")) {
+        feedback = document.createElement("div");
+        feedback.className = "invalid-feedback";
+        input.insertAdjacentElement("afterend", feedback);
+    }
+
+    input.classList.toggle("is-invalid", Boolean(message));
+    feedback.textContent = message;
+    feedback.style.display = message ? "block" : "none";
+
+    return !message;
+}
+
 function formatTimestamp(dateString) {
     if (!dateString) return "Never";
     const date = new Date(dateString);
